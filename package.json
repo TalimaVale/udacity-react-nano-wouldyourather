@@ -1,0 +1,15 @@
+{
+  "name": "would-you-rather",
+  "version": "1.0.0",
+  "description": "Udacity React Developer Nanodegree - Project 2, Would You Rather?",
+  "main": "index.js",
+  "dependencies": {
+    "create-react-app": "^2.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

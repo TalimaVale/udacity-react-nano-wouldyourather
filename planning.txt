@@ -1,0 +1,170 @@
+Step 1 - Draw All of the Views of the Apps
+
+List of Views:
+-Login
+-Home
+  -Unanswered Qs List
+  -Answered Qs List
+-New Question
+-Question
+  -Unanswered
+  -Answered
+-Leaderboard
+
+
+
+Step 2 - Break Each View Into a Hierarchy of Components
+
+Hierarchy of Components:
+Login
+  -App
+    -Nav
+    -Login
+
+Home
+  -App
+    -Nav
+    -QuestionsList
+      -answered render, unanswered render
+
+New Question
+  -App
+    -Nav
+    -NewQuestion
+
+Question
+  -App
+    -Nav
+    -Question
+      -answered render, unanswered render
+
+Leaderboard
+  -App
+    -Nav
+    -Leaderboard
+
+
+
+List of View Components:
+-App
+-Nav
+-Login
+-QuestionsList
+-Question
+-NewQuestion
+-Leaderboard
+
+
+
+Step 3 - Determine What Events Happen in the App
+
+App
+
+Nav
+  -getAuthUser
+
+Login
+  -getUsers
+  -setAuthUser
+  -user selected
+
+Home
+  -getQuestions
+  -getAuthUser
+  -tab selected
+
+Question
+  -getQuestions
+  -getAuthUser
+  -saveQuestionAnswer
+  -option selected
+
+NewQuestion
+  -getAuthUser
+  -saveQuestion
+  -question text
+
+Leaderboard
+  -getUsers
+
+Our Events:
+  -getAuthUser
+  -setAuthUser
+  -getUsers
+  -getQuestions
+  -saveQuestion
+  -setQuestionAnswer
+
+
+
+
+Step 4 - Determine What Data Lives in the Store
+
+Redux Store
+  -users
+  -questions
+  -authUser
+
+React Components
+  -login, user selected
+  -home, tab selected
+  -question, option selected
+  -new question, question text
+
+
+
+Coding Step 1 - Design the shape of the state and create reducers
+
+reduxStore = {
+  users: {
+    userId: {
+      userId,
+      name,
+      avatarURL,
+      questions,
+      answers,
+    },
+    userId: {
+      userId,
+      name,
+      avatarURL,
+      questions,
+      answers,
+    },
+  },
+  questions: {
+    questionId: {
+      questionId,
+      author,
+      timestamp,
+      optionOne: {
+        votes,
+        text,
+      },
+      optionTwo: {
+        votes,
+        text,
+      },
+    },
+    questionId: {
+      questionId,
+      author,
+      timestamp,
+      optionOne: {
+        votes,
+        text,
+      },
+      optionTwo: {
+        votes,
+        text,
+      },
+    },
+  },
+  authUser: {
+    userId,
+    name,
+    avatarURL,
+    questions,
+    answers,
+  },
+}
